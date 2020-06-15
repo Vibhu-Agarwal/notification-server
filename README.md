@@ -44,4 +44,4 @@ python manage.py process_tasks
 | Method | Endpoint | Function |
 |--|--|--|
 | POST | `place/` | Place a new Notification |
-| POST | `remove/<notification_id>` | Delete Notification with specified ID |
+| DELETE | `remove/<notification_id>` | Delete Notification with specified ID |
