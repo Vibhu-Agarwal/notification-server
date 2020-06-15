@@ -118,6 +118,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Max Number of Attempts for Sending Notification
+MAX_ATTEMPTS = 3
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
