@@ -6,7 +6,6 @@ User = get_user_model()
 
 email_superuser = 'vibhu4agarwal@gmail.com'
 superuser_username = 'superuser'
-superuser_phone_number = 9999999999
 
 help_message = f"""
 Sets up the DB, creating:
@@ -25,7 +24,6 @@ class Command(BaseCommand):
             User.objects.create_superuser(username=superuser_username,
                                           first_name="Super User",
                                           email=email_superuser,
-                                          password=settings.SUPERUSER_PASSWORD,
-                                          phone_number=superuser_phone_number)
+                                          password=settings.SUPERUSER_PASSWORD)
             print('Super-User Created!')
         print('Notification-Server DB Set-Up Complete!')

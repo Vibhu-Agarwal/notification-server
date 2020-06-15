@@ -26,4 +26,4 @@ class Notification(models.Model):
         verbose_name_plural = 'Notifications'
 
     def __str__(self):
-        return self.time
+        return f'{self.url} | {self.time}'
