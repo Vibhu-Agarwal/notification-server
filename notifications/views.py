@@ -23,10 +23,10 @@ class DeleteNotificationAPIView(DestroyAPIView):
 @background()
 def notify():
     print('WEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE')
-    return Response({})
 
 
 class TestAPIView(APIView):
 
     def get(self, request, *args, **kwargs):
         notify(schedule=90)
+        return Response({})
