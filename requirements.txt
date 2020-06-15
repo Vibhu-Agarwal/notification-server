@@ -6,7 +6,6 @@ django-background-tasks==1.2.5
 django-compat==1.0.15
 djangorestframework==3.11.0
 idna==2.9
-pkg-resources==0.0.0
 pytz==2020.1
 requests==2.23.0
 six==1.15.0
