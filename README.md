@@ -16,14 +16,18 @@ pip install -r requirements.txt
 export NOTIFICATIONS_SUPERUSER_PASSWORD="ADMIN_PANEL_PASSWORD"
 ```
 
-## Usage
+## Create Admin User
+```bash
+cd src/
+python manage.py db_setup
+```
+**Username: `superuser`**
 
+## Usage
 Run these two processes: Django-Server and `process_tasks` management command
 
 ### Running Locally
-```bash
-cd src/
-```
+
 #### Django Server
 ```bash
 python manage.py runserver
