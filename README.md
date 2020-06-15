@@ -1,5 +1,5 @@
 # notification-server
-A server to make HTTP requests at particular time with a databased-backed work queue
+A server to make HTTP requests at a particular time with a database-backed work queue
 
 ## Fork and Clone
 ```bash
