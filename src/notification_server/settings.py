@@ -120,6 +120,9 @@ USE_TZ = True
 # Max Number of Attempts for Sending Notification
 MAX_ATTEMPTS = 3
 
+# Delete Past Notifications' Data from the Database
+DELETE_PAST_NOTIFICATIONS = True
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 

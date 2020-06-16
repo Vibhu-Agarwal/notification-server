@@ -6,6 +6,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from background_task import background
 from rest_framework.generics import DestroyAPIView
+from django.conf import settings
 
 REQUEST_FUNCTIONS = {
     'post': requests.post,
@@ -19,6 +20,8 @@ def notify(notification_id):
     notifications = Notification.objects.filter(id=notification_id)
     if notifications.exists():
         notification = notifications.first()
+        if settings.DELETE_PAST_NOTIFICATIONS:
+            notification.delete()
         fn = REQUEST_FUNCTIONS.get(notification.method)
         if notification.method in REQUEST_FUNCTIONS:
             if notification.method in ['post', 'patch']:
@@ -28,7 +31,6 @@ def notify(notification_id):
                 fn(notification.url, data=data)
             elif notification.method in ['get', 'delete']:
                 fn(notification.url)
-            notification.delete()
 
 
 class CreateNotificationAPIView(APIView):
