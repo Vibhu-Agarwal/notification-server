@@ -16,6 +16,14 @@ pip install -r requirements.txt
 export NOTIFICATIONS_SUPERUSER_PASSWORD="ADMIN_PANEL_PASSWORD"
 ```
 
+## Configure Settings
+(`src/notification_server/settings.py`)
+
+Set `DELETE_PAST_NOTIFICATIONS` to `False` if you want to keep the past notifications' data in the DB
+```python
+DELETE_PAST_NOTIFICATIONS = True
+```
+
 ## Create Admin User
 ```bash
 cd src/
@@ -45,3 +53,14 @@ python manage.py process_tasks
 |--|--|--|
 | POST | `place/` | Place a new Notification |
 | DELETE | `remove/<notification_id>` | Delete Notification with specified ID |
+
+#### `notifications/place/`
+```json
+{
+  "url": STRING,
+  "method": ["post"|"delete"|"patch"|"get"],
+  "time": STRING,
+  "data": JSON
+}
+```
+**`time`**: [(Date and Time in proper format)](https://docs.djangoproject.com/en/3.0/ref/settings/#datetime-input-formats)
