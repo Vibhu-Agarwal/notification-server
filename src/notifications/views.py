@@ -38,11 +38,11 @@ class CreateNotificationAPIView(APIView):
     permission_classes = ()
 
     def post(self, request, *args, **kwargs):
-        request_body = request.data
+        request_body = request.data.dict()
         data = request_body.get('data', None)
         if data:
             data = json.dumps(data)
-        request_body.update({'data': data})
+            request_body.update({'data': data})
         notification_serializer = NotificationSerializer(data=request_body)
         notification_serializer.is_valid(raise_exception=True)
         notification = notification_serializer.save()
