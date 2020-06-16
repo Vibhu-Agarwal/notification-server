@@ -38,7 +38,7 @@ class CreateNotificationAPIView(APIView):
     permission_classes = ()
 
     def post(self, request, *args, **kwargs):
-        request_body = request.data
+        request_body = dict(request.data)
         data = request_body.get('data', None)
         if data:
             data = json.dumps(data)
